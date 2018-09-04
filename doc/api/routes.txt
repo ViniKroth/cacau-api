@@ -1,0 +1,50 @@
+RESOURCES/OBJECTS
+
+oauth2
+------
+POST /oauth
+
+users
+-----
+POST /users
+GET /users
+GET /users?email=fulano@xyz.com / GET /users?sexo=F&age>=18
+GET /users/{id}
+PUT /users/{id}
+PATCH /users/{id}
+DELETE /users/{id}
+
+sponsors
+--------
+POST /sponsors
+GET /sponsors
+GET /sponsors?bairro="Jardim Ipiranga"
+GET /sponsors/{id}
+PUT /sponsors/{id}
+PATCH /sponsors/{id}
+DELETE /sponsors/{id}
+
+challenges
+----------
+POST /challenges
+GET /challenges
+GET /challenges?date>=01-04-2018&date<=02-04-2018
+GET /challenges/{id}
+PUT /challenges/{id}
+PATCH /challenges/{id}
+DELETE /challenges/{id}
+
+POST /challenges/{id}/prizes
+PUT /challenges/{id}/prizes/{id}
+DELETE /challenges/{id}/prizes/{id}
+
+POST /challenges/{id}/winners
+DELETE /challenges/{id}/winners/{id}
+
+submissions
+-----------
+POST /challenges/{id}/submissions
+GET /challenges/{id}/submissions
+GET /challenges/{id}/submissions/{id}
+PATCH /challenges/{id}/submissions/{id}
+DELETE /challenges/{id}/submissions/{id}
