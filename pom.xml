@@ -72,6 +72,12 @@
 			<artifactId>commons-validator</artifactId>
 			<version>1.4.1</version>
 		</dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>3.0.0</version>
+            <scope>test</scope>
+        </dependency>
 	</dependencies>
 
 	<build>
@@ -110,6 +116,7 @@
 					<path>cacau/api</path>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 
