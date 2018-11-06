@@ -1,6 +1,19 @@
 language: java
+
+node_js:
+  - "8.2.1"
+
+install:
+  - npm install newman
+
+before_script:
+  - node --version
+  - npm --version
+  - node_modules/.bin/newman --version
+
 install:
 - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
 script:
 - mvn test
 services: mongodb
