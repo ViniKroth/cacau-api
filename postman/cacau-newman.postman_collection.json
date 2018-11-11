@@ -1,0 +1,75 @@
+{
+	"variables": [],
+	"info": {
+		"name": "cacau-newman",
+		"_postman_id": "5a9572ce-6207-f335-a77e-7183d8750678",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST /users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Criou Usuário\"] = jsonData.active === true;",
+							"",
+							"postman.clearGlobalVariable(\"id_usuário\");",
+							"postman.setGlobalVariable(\"id_usuário\", jsonData.id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url-dev}}/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "{{content-type}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"usuario03@pucrs.br\",\r\n  \"password\": \"a12345678\",\r\n  \"name\": \"Usuário03\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/ping",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Retorna Versão\"] = jsonData.version !== undefined"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url-dev}}/ping",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "{{content-type}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
