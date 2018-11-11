@@ -14,7 +14,7 @@ install:
 
 script:
 - mvn test
-- node_modules/.bin/newman run postman/cacau.postman_collection.json -e tests/cacau.postman_environment.json
+- node_modules/.bin/newman run postman/cacau.postman_collection.json -e postman/cacau.postman_environment.json
 
 services: mongodb
 
