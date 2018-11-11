@@ -14,5 +14,9 @@ install:
 
 script:
 - mvn test
+- java -jar ./target/cacau-api-0.0.1.jar & node_modules/.bin/newman run postman/cacau-newman.postman_collection.json -e postman/cacau.postman_environment.json
 
 services: mongodb
+
+notifications:
+  email: false
