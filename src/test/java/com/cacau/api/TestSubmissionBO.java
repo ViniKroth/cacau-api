@@ -3,11 +3,8 @@ package com.cacau.api;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.cacau.api.exception.PersistencyException;
@@ -88,6 +85,6 @@ public class TestSubmissionBO {
 	public void testUpdateUserRequestBO() throws Exception {
 		subBO = new SubmissionBO(sub);
 		subBO.updateWith(subRequest);
-		assertEquals(subBO.getId(), "2");
+		assertEquals(subBO.getId(), "1");
 	}
 }
