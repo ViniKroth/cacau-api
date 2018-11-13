@@ -116,6 +116,7 @@ public class UserBO {
     }
 
     public void updateWith(UserRequestDTO user) throws ValidationException {
+    	setId(user.getId().isPresent() ? user.getId().get() : this.id);
         setEmail(user.getEmail().isPresent() ? user.getEmail().get() : this.email);
         setPassword(user.getPassword().isPresent() ? user.getPassword().get() : this.password);
         setName(user.getName().isPresent() ? user.getName().get():this.name);
