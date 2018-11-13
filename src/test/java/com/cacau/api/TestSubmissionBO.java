@@ -61,7 +61,6 @@ public class TestSubmissionBO {
 		Optional<String> id = Optional.of("2");
 		ArrayList<MediaRequestDTO> mediaMongoDTO = new ArrayList<>();
 		Optional<ArrayList<MediaRequestDTO>> mediaMongoDTOs2 = Optional.of(mediaMongoDTO);
-		when(subRequest.getId()).thenReturn(id);
 		when(subRequest.isActive()).thenReturn(true);
 		when(subRequest.getDescription()).thenReturn(descricao);
 		when(subRequest.getStatus()).thenReturn(status);
